@@ -1,28 +1,22 @@
 plugins {
     alias(libs.plugins.android.library)
     alias(libs.plugins.kotlin.android)
-    `maven-publish`           // <-- add
-    signing                   // <-- add (only needed for Maven Central)
+    `maven-publish`
 }
 
 android {
     namespace = "com.trackmighty.sdk"
-    compileSdk {
-        version = release(36)
-    }
+    compileSdk = 34
 
     defaultConfig {
-        minSdk = 23
-
+        minSdk = 22
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
         consumerProguardFiles("consumer-rules.pro")
     }
 
-    // Important — publish sources + javadoc so IDEs show your KDoc
     publishing {
         singleVariant("release") {
             withSourcesJar()
-            withJavadocJar()
         }
     }
 
@@ -35,6 +29,7 @@ android {
             )
         }
     }
+
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_11
         targetCompatibility = JavaVersion.VERSION_11
@@ -43,9 +38,6 @@ android {
         jvmTarget = "11"
     }
 }
-
-group   = "com.trackmighty"
-version = "1.0.0"
 
 dependencies {
     implementation(libs.androidx.core.ktx)
@@ -61,4 +53,17 @@ dependencies {
 
     compileOnly("com.android.installreferrer:installreferrer:2.2")
     compileOnly("com.google.android.gms:play-services-ads-identifier:18.3.0")
+}
+
+afterEvaluate {
+    publishing {
+        publications {
+            create<MavenPublication>("release") {
+                from(components["release"])
+                groupId    = "com.github.pubmighty"
+                artifactId = "TrackMightyAndroid"
+                version    = "1.0.3"
+            }
+        }
+    }
 }
