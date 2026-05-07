@@ -1,4 +1,4 @@
-package com.trackmighty.sdk
+package com.trackmighty.app
 
 import org.junit.Test
 

@@ -10,7 +10,6 @@ import com.trackmighty.sdk.models.AdMetricsBody
 import com.trackmighty.sdk.models.AdRequestBody
 import com.trackmighty.sdk.models.AdRevenueBody
 import com.trackmighty.sdk.models.ApiResponse
-import com.trackmighty.sdk.tracker.RetrofitClient
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.SupervisorJob

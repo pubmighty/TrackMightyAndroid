@@ -1,10 +1,10 @@
 # TrackMighty SDK ProGuard rules
 # Keep all public API classes so developers can call them from obfuscated host apps
 
--keep class com.trackmighty.sdk.MightyTracker { *; }
--keep class com.trackmighty.sdk.tracker.AdTracker { *; }
--keep class com.trackmighty.sdk.tracker.ConversionTracker { *; }
--keep class com.trackmighty.sdk.SdkConstants { *; }
+-keep class com.trackmighty.app.MightyTracker { *; }
+-keep class com.trackmighty.app.tracker.AdTracker { *; }
+-keep class com.trackmighty.app.tracker.ConversionTracker { *; }
+-keep class com.trackmighty.app.SdkConstants { *; }
 -keep class com.mightytracker.sdk.SdkConstants$* { *; }
 
 # Keep network model classes so Gson can deserialize them

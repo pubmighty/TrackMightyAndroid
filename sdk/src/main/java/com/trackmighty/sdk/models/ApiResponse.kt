@@ -1,7 +1,6 @@
 package com.trackmighty.sdk.models
 
 import com.google.gson.annotations.SerializedName
-import com.trackmighty.sdk.SdkConstants.Fields
 
 /**
  * Generic server response wrapper.

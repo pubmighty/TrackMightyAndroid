@@ -4,13 +4,13 @@ plugins {
 }
 
 android {
-    namespace = "com.trackmighty.sdk"
+    namespace = "com.trackmighty.app"
     compileSdk {
         version = release(36)
     }
 
     defaultConfig {
-        applicationId = "com.trackmighty.sdk"
+        applicationId = "com.trackmighty.app"
         minSdk = 22
         targetSdk = 36
         versionCode = 1
